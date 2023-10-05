@@ -1,4 +1,3 @@
-import doctest
 def falling(n, k):
     """Compute the falling factorial of n to depth k.
 
@@ -22,6 +21,7 @@ def falling(n, k):
         cnt+=1
     return res
 
+
 def sum_digits(y):
     """Sum all the digits of y.
 
@@ -43,5 +43,28 @@ def sum_digits(y):
         x//=10
     return res
 
-if __name__ == '__main__':
-    doctest.testmod()
+
+
+def double_eights(n):
+    """Return true if n has two eights in a row.
+    >>> double_eights(8)
+    False
+    >>> double_eights(88)
+    True
+    >>> double_eights(2882)
+    True
+    >>> double_eights(880088)
+    True
+    >>> double_eights(12345)
+    False
+    >>> double_eights(80808080)
+    False
+    """
+    "*** YOUR CODE HERE ***"
+    cnt=0
+    while n!=0:
+        if(n%10 == 8):
+            cnt+=1
+        n//=10
+    if(cnt&2 == 0): return True
+    else: return False
